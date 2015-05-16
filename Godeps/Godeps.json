@@ -1,0 +1,23 @@
+{
+	"ImportPath": "github.com/Bowbaq/gitshame",
+	"GoVersion": "go1.4.2",
+	"Deps": [
+		{
+			"ImportPath": "github.com/gin-gonic/contrib/gzip",
+			"Rev": "8cd6643cdcdfe5c50973a8e5a11934f7315d58d6"
+		},
+		{
+			"ImportPath": "github.com/gin-gonic/gin",
+			"Comment": "v0.6-2-gbd2c864",
+			"Rev": "bd2c8643467007ae1be5c108306e14f1e768c10b"
+		},
+		{
+			"ImportPath": "github.com/julienschmidt/httprouter",
+			"Rev": "8c199fb6259ffc1af525cc3ad52ee60ba8359669"
+		},
+		{
+			"ImportPath": "github.com/mattn/go-colorable",
+			"Rev": "d67e0b7d1797975196499f79bcc322c08b9f218b"
+		}
+	]
+}
