@@ -10,6 +10,5 @@ type Shame struct {
 	Reponame string
 	Path     string
 	Author   string
-	Language string
 	Content  []byte
 }
