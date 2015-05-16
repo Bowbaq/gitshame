@@ -25,16 +25,11 @@
       <form id="submit-shame" class="form-inline">
         <div class="form-group link-input-wrapper">
           <label for="url" class="sr-only">URL</label>
-          <input type="url" class="form-control link-input" name="url" id="url" placeholder="Link to some code" value="https://github.com/schachmat/wego/blob/master/we.go#L72-L89">
+          <input type="url" class="form-control link-input" name="url" id="url" placeholder="Link to some code">
         </div>
         <button type="submit" class="btn btn-default">Shame</button>
       </form>
-      {{range .shames}}
-      <section>
-        <p><a href="{{.URL}}">#{{.ID}} - {{.URL}}</a></p>
-        <pre><code class="{{.Language}}">{{.Content | printf "%s"}}</code></pre>
-      </section>
-      {{end}}
+      <div id="shames"></div>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -42,6 +37,19 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/highlight.pack.js"></script>
+
+    <script type="text/javascript">
+      window.shames = {{.shames}}
+    </script>
+
+    <!-- Shame template -->
+    <script type="text/html" id="shame_tmpl">
+      <section id="shame-<%= ID %>">
+        <p><a href="<%= URL %>">#<%= ID %> - <%= URL %></a></p>
+        <pre><code><%= Content %></code></pre>
+      </section>
+    </script>
+
     <script src="assets/js/gitshame.js"></script>
   </body>
 </html>
