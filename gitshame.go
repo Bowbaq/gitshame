@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/base64"
 	"errors"
+	"html"
 	"log"
 	"net/http"
 	"os"
@@ -81,7 +82,7 @@ func main() {
 		indent := len(snippet[0]) - len(strings.TrimSpace(snippet[0]))
 		for i, l := range snippet {
 			if len(l) >= indent {
-				snippet[i] = l[indent:]
+				snippet[i] = html.EscapeString(l[indent:])
 			}
 		}
 
@@ -122,7 +123,7 @@ func initDB() gorm.DB {
 var urlMatcher = regexp.MustCompile(`^https://github.com/(?P<owner>[^/]+)/(?P<repo>[^/]+)/blob/(?P<ref>[^/]+)/(?P<path>[^#]+)#L([0-9]+)-L([0-9]+)`)
 
 func parseURL(url string) (string, string, string, string, int, int, error) {
-	match := urlMatcher.FindStringSubmatch(url)
+	match := urlMatcher.FindStringSubmatch(strings.TrimSpace(url))
 	if match == nil || len(match) < 7 {
 		return "", "", "", "", -1, -1, errors.New("Invalid URL")
 	}
