@@ -5,3 +5,20 @@
 .link-input-wrapper .link-input {
   width: 100%;
 }
+
+p {
+  text-align: center;
+}
+
+section {
+  margin-top: 30px;
+}
+
+pre {
+  background-color: #f9f9f9;
+  border: 1px solid #999;
+}
+
+#shames code.hljs {
+  background-color: #f9f9f9;
+}

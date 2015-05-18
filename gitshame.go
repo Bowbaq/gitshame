@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/base64"
 	"errors"
 	"html"
 	"log"
@@ -61,7 +60,7 @@ func main() {
 			return
 		}
 
-		content, err := base64.StdEncoding.DecodeString(*result.Content)
+		content, err := result.Decode()
 		if err != nil {
 			c.JSON(http.StatusInternalServerError, gin.H{"error": err})
 			return
@@ -86,11 +85,16 @@ func main() {
 			}
 		}
 
+		name := *result.Name
+
 		shame := Shame{
-			URL:      payload.URL,
-			Reponame: owner + "/" + repo,
-			Path:     path,
-			Content:  []byte(strings.Join(snippet, "\n")),
+			URL:       payload.URL,
+			Reponame:  owner + "/" + repo,
+			Path:      path,
+			Content:   []byte(strings.Join(snippet, "\n")),
+			Beginline: start,
+			Endline:   end,
+			Filename:  name,
 		}
 
 		if err := db.Table("shames").FirstOrCreate(&shame, Shame{URL: payload.URL}).Error; err != nil {
