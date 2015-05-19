@@ -1,7 +1,7 @@
 # Gitshame
 
 ## Installation Instruction
-1. Install Vagrant and VMBox
+1. Install Vagrant and VirtualBox
 2. Clone this repo
 3. `cd` into the cloned repo
 4. Run `vagrant up`
