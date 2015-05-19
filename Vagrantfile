@@ -40,6 +40,7 @@ Vagrant.configure(2) do |config|
 
     go get github.com/tools/godep
     go get github.com/codegangsta/gin
+    godep restore
 
     chown -R vagrant:vagrant $GOPATH
   SHELL
