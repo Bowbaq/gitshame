@@ -1,9 +1,51 @@
-.link-input-wrapper {
-  width: 80%;
+:root {
+  /*https://color.adobe.com/creamy-grey-color-theme-7775*/
 }
 
-.link-input-wrapper .link-input {
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #3f3e37;
+}
+
+form {
+  position: relative;
+  display: table;
   width: 100%;
+}
+
+.link-input-wrapper {
+  display: table-cell;
+  width: 100%;
+  padding-right: 10px;
+  vertical-align: middle;
+}
+
+input {
+  width: 100%;
+  margin-right: 20px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 10px;
+}
+
+button.btn {
+  width: 80px;
+  display: table-cell;
+  float: right;
+  color: #3f3e37;
+  background-color: #fffbdc;
+}
+
+button.btn:hover {
+  background-color: #fffdf1;
+  border-color: #7f7d6e;
+}
+
+.border {
+  border-radius: 4px;
+  border: 1px solid #7f7d6e;
 }
 
 p {
@@ -11,14 +53,15 @@ p {
 }
 
 section {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 pre {
-  background-color: #f9f9f9;
-  border: 1px solid #999;
+  background-color: #fffbdc;
+  border-radius: 4px;
+  border: 1px solid #7f7d6e;
 }
 
 #shames code.hljs {
-  background-color: #f9f9f9;
+  background-color: #fffbdc;
 }
