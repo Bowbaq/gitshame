@@ -2,6 +2,10 @@
   /*https://color.adobe.com/creamy-grey-color-theme-7775*/
 }
 
+body {
+  background-color: #bfbca5;
+}
+
 h1 {
   text-align: center;
   margin-top: 20px;
@@ -28,6 +32,13 @@ input {
   padding-top: 6px;
   padding-bottom: 6px;
   padding-left: 10px;
+  background-color: #fffbdc;
+  outline: none;
+}
+
+input:focus {
+  border: 1px solid #757d6e;
+  box-shadow: 0 0 5px #757d6e;
 }
 
 button.btn {
